@@ -1,0 +1,89 @@
+.sidebar{
+    width: 20%;
+    border-right: 1px solid $color-primary-dark;
+    padding: 25px;
+    background-color: $dark-gray;
+    @include max-responsive($w-sm){
+        position: fixed;
+        left: -100%;
+        top: 0;
+        height: 100vh;
+        overflow: auto;
+        width: 100%;
+        transition: left .3s;
+
+        &.active{
+            left: 0;
+        }
+    }
+    
+    &Header{
+        display: none;
+        @include max-responsive($w-sm){
+            display: block;
+            
+            &Search{
+                font-size: 16px;
+                line-height: 1.5;
+                background: $dark-gray;
+                border: 1px solid $color-primary;
+                background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><path fill='%238C92A0' d='M11.44 10.73l4.41 4.42a.5.5 0 1 1-.7.7l-4.42-4.41a6.5 6.5 0 1 1 .7-.7v-.01zM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11z'></path></svg>");
+                background-repeat: no-repeat;
+                background-position: 15px 10px;
+                background-size: 20px 20px;
+                border-radius: 100px;
+                width: 100%;
+                padding: .5em 1em .5em 2.5em;
+                &::placeholder{
+                    color: $text-color;
+                }
+                &:focus{
+                    outline: none;
+                }
+            }
+            &Top{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 25px;
+
+                a{
+                    display: block;
+                }
+            }
+        }
+    }
+    &Label{
+        margin: 30px 0 10px;
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: -0.5px;
+        color: $white;
+        font-weight: 600;
+    }
+    &List{
+        &Item{
+            padding: 10px 20px;
+            border-radius: 10px;
+            width: 100%;
+            font-weight: 500;
+            text-transform: capitalize;
+            &.active{
+                background-color: $orange;
+
+                a{
+                    color: $black;
+                }
+            }
+
+            a{
+                color: $dark-white;
+                font-size: 16px;
+                transition: color .3s;
+                &:hover{
+                    color: $orange;
+                }
+            }
+        }
+    }
+}

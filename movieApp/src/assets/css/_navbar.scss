@@ -1,0 +1,73 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 25px;
+    border-bottom: 1px solid $dark-gray;
+    @include max-responsive($w-sm){
+        align-items: center;
+    }
+    .logo{
+        max-width: 100%;
+        height: auto;
+        width: 150px;
+    }
+    .search{
+        @include max-responsive($w-sm){
+            display: none;
+        }
+        &Form{
+            height: 60px;
+            background: $dark-gray;
+            line-height:40px;
+            padding: 10px;
+            border-radius: 60px;
+            &:hover{
+                .searchFormInput{
+                    width: 240px;
+                    margin: 0px 8px;
+                }
+                .searchFormButton{
+                    background: $dark-white;
+                }
+            }
+
+            &Input{
+                background: $dark-gray;
+                color: $dark-white;
+                outline: none;
+                border: none;
+                line-height:40px;
+                width: 0px;
+                float: left;
+                font-size:14px;
+                transition: 0.7s ease;
+                &:focus{
+                    width: 240px;
+                    margin: 0px 8px;
+
+                    &+.searchFormButton{
+                        background: $dark-white;
+                    }
+                }
+            }
+            &Button{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                text-decoration:none;
+                background: $dark-gray;
+                padding: 12px;
+                border-radius: 50%;
+                float: right;
+                color: $orange;
+                transition: 0.4s ease;
+            }
+        }
+    }
+    .menu{
+        display: none;
+        @include max-responsive($w-sm){
+            display: block;
+        }
+    }
+}

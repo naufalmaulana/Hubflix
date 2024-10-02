@@ -1,0 +1,67 @@
+.main{
+    padding: 10px 30px;
+    // flex-grow: 1;
+    width: 80%;
+    @include max-responsive($w-sm){
+        width: 100%;
+    }
+
+    &Title{
+        font-size: 24px;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: $white;
+        margin: 0;
+    }
+    
+    &List{
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &Card{
+            width: calc(100%/3);
+            padding: 0 30px 0;
+            margin-bottom: 50px;
+            @include max-responsive($w-sm){
+                width: 100%;
+                padding: 0;
+            }
+
+            &Wrap{
+                width: 100%;
+                transition: scale .3s;
+                text-align: center;
+                &:hover{
+                    scale: 1.05;
+                }
+
+                img{
+                    max-width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    object-position: top center;
+                    border-radius: 8px;
+                    box-shadow: 0rem 2rem 5rem $shadow-color;
+                    margin-bottom: 15px;
+                }
+                &Title{
+                    font-size: 20px;
+                    color: $dark-white;
+                    margin: 0 0 15px;
+                }
+                &Rating{
+                    transition: color .3s;
+                    color: $dark-white;
+                    
+                    i{
+                        margin-right: 5px;
+                        color: $orange;
+                        transition: color .3s;
+                    }
+                }
+            }
+        }
+    }
+}

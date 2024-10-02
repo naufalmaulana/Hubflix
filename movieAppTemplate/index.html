@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Movie App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="/">
+            <img src="./assets/img/logo-hubflix-transparent.svg" alt="hubflix" class="logo" width="119" height="48">
+        </a>
+        <div class="search">
+            <form class="searchForm">
+                <button type="submit" class="searchFormButton">
+                    <i class="fa fa-search"></i>
+                </button>
+                <input id="search" type="search" placeholder="&nbsp;Search for a movie..." class="searchFormInput" value="">
+            </form>
+        </div>
+        <div class="menu" onclick="openMenu()">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_1535_8341)">
+                <path d="M26.6668 23.3332C27.1805 23.3334 27.6743 23.5313 28.046 23.8857C28.4177 24.2402 28.6388 24.724 28.6635 25.2371C28.6882 25.7501 28.5146 26.2529 28.1786 26.6414C27.8426 27.0299 27.3701 27.2743 26.8588 27.3238L26.6668 27.3332H5.3335C4.81987 27.3329 4.32604 27.1351 3.95431 26.7806C3.58259 26.4262 3.36148 25.9423 3.3368 25.4293C3.31211 24.9163 3.48575 24.4134 3.82173 24.0249C4.15771 23.6364 4.63027 23.3921 5.1415 23.3425L5.3335 23.3332H26.6668ZM26.6668 13.9998C27.1973 13.9998 27.706 14.2106 28.081 14.5856C28.4561 14.9607 28.6668 15.4694 28.6668 15.9998C28.6668 16.5303 28.4561 17.039 28.081 17.4141C27.706 17.7891 27.1973 17.9998 26.6668 17.9998H5.3335C4.80306 17.9998 4.29436 17.7891 3.91928 17.4141C3.54421 17.039 3.3335 16.5303 3.3335 15.9998C3.3335 15.4694 3.54421 14.9607 3.91928 14.5856C4.29436 14.2106 4.80306 13.9998 5.3335 13.9998H26.6668ZM26.6668 4.6665C27.1973 4.6665 27.706 4.87722 28.081 5.25229C28.4561 5.62736 28.6668 6.13607 28.6668 6.6665C28.6668 7.19694 28.4561 7.70565 28.081 8.08072C27.706 8.45579 27.1973 8.6665 26.6668 8.6665H5.3335C4.80306 8.6665 4.29436 8.45579 3.91928 8.08072C3.54421 7.70565 3.3335 7.19694 3.3335 6.6665C3.3335 6.13607 3.54421 5.62736 3.91928 5.25229C4.29436 4.87722 4.80306 4.6665 5.3335 4.6665H26.6668Z" fill="#F5F5F5"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_1535_8341">
+                <rect width="32" height="32" fill="white"/>
+                </clipPath>
+                </defs>
+            </svg>
+        </div>
+    </nav>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebarHeader">
+                <div class="sidebarHeaderTop">
+                    <a href="/">
+                        <img src="./assets/img/logo-hubflix-transparent.svg" alt="hubflix" class="logo" width="119" height="48">
+                    </a>
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="closeMenu()">
+                        <path d="M16 2C8.2 2 2 8.2 2 16C2 23.8 8.2 30 16 30C23.8 30 30 23.8 30 16C30 8.2 23.8 2 16 2ZM21.4 23L16 17.6L10.6 23L9 21.4L14.4 16L9 10.6L10.6 9L16 14.4L21.4 9L23 10.6L17.6 16L23 21.4L21.4 23Z" fill="#F7971D"/>
+                    </svg>
+                </div>
+                <form action="">
+                    <input class="sidebarHeaderSearch" type="text" placeholder="Search">
+                </form>
+            </div>
+            <h2 class="sidebarLabel">Discover</h2>
+            <ul class="sidebarList">
+                <li class="sidebarListItem active">
+                    <a href="#">
+                        Popular
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        Top Rated
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        Newest
+                    </a>
+                </li>
+            </ul>
+            <h2 class="sidebarLabel">Genres</h2>
+            <ul class="sidebarList">
+                <li class="sidebarListItem active">
+                    <a href="#">
+                        action
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        adventure
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        animation
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        anime
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        asian
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        award winning
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        comedy
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        crime
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        documentary
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        drama
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        family
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        fantasy
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        history
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        horror
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        musical
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        mystery
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        romance
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        Sci-Fi
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        thriller
+                    </a>
+                </li>
+                <li class="sidebarListItem">
+                    <a href="#">
+                        western
+                    </a>
+                </li>
+            </ul>
+        </aside>
+        <main class="main">
+            <h1 class="mainTitle">
+                popular
+            </h1>
+            <div class="mainList">
+                <div class="mainListCard">
+                    <div class="mainListCardWrap">
+                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg" alt="image" width="600" height="900">
+                        <h2 class="mainListCardWrapTitle">
+                            The Shawshank Redemption
+                        </h2>
+                        <div class="mainListCardWrapRating">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            87
+                        </div>
+                    </div>
+                </div>
+                <div class="mainListCard">
+                    <div class="mainListCardWrap">
+                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/3bhkrj58Vtu7enYsRolD1fZdja1.jpg" alt="image" width="600" height="900">
+                        <h2 class="mainListCardWrapTitle">
+                            The Godfather
+                        </h2>
+                        <div class="mainListCardWrapRating">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            87
+                        </div>
+                    </div>
+                </div>
+                <div class="mainListCard">
+                    <div class="mainListCardWrap">
+                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/ow3wq89wM8qd5X7hWKxiRfsFf9C.jpg" alt="image" width="600" height="900">
+                        <h2 class="mainListCardWrapTitle">
+                            12 Angry Men
+                        </h2>
+                        <div class="mainListCardWrapRating">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            85
+                        </div>
+                    </div>
+                </div>
+                <div class="mainListCard">
+                    <div class="mainListCardWrap">
+                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/39wmItIWsg5sZMyRUHLkWBcuVCM.jpg" alt="image" width="600" height="900">
+                        <h2 class="mainListCardWrapTitle">
+                            Spirited Away
+                        </h2>
+                        <div class="mainListCardWrapRating">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            85
+                        </div>
+                    </div>
+                </div>
+                <div class="mainListCard">
+                    <div class="mainListCardWrap">
+                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/qJ2tW6WMUDux911r6m7haRef0WH.jpg" alt="image" width="600" height="900">
+                        <h2 class="mainListCardWrapTitle">
+                            The Dark Knight
+                        </h2>
+                        <div class="mainListCardWrapRating">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            85
+                        </div>
+                    </div>
+                </div>
+                <div class="mainListCard">
+                    <div class="mainListCardWrap">
+                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg" alt="image" width="600" height="900">
+                        <h2 class="mainListCardWrapTitle">
+                            Parasite
+                        </h2>
+                        <div class="mainListCardWrapRating">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            85
+                        </div>
+                    </div>
+                </div>
+                <div class="mainListCard">
+                    <div class="mainListCardWrap">
+                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/8VG8fDNiy50H4FedGwdSVUPoaJe.jpg" alt="image" width="600" height="900">
+                        <h2 class="mainListCardWrapTitle">
+                            The Green Mile
+                        </h2>
+                        <div class="mainListCardWrapRating">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            85
+                        </div>
+                    </div>
+                </div>
+                <div class="mainListCard">
+                    <div class="mainListCardWrap">
+                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/q719jXXEzOoYaps6babgKnONONX.jpg" alt="image" width="600" height="900">
+                        <h2 class="mainListCardWrapTitle">
+                            Your Name
+                        </h2>
+                        <div class="mainListCardWrapRating">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            85
+                        </div>
+                    </div>
+                </div>
+                <div class="mainListCard">
+                    <div class="mainListCardWrap">
+                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg" alt="image" width="600" height="900">
+                        <h2 class="mainListCardWrapTitle">
+                            Fight Club
+                        </h2>
+                        <div class="mainListCardWrapRating">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            84
+                        </div>
+                    </div>
+                </div>
+                <div class="mainListCard">
+                    <div class="mainListCardWrap">
+                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/iiZZdoQBEYBv6id8su7ImL0oCbD.jpg" alt="image" width="600" height="900">
+                        <h2 class="mainListCardWrapTitle">
+                            Spiderman Into the Spider-verse
+                        </h2>
+                        <div class="mainListCardWrapRating">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            84
+                        </div>
+                    </div>
+                </div>
+                <div class="mainListCard">
+                    <div class="mainListCardWrap">
+                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/7fn624j5lj3xTme2SgiLCeuedmO.jpg" alt="image" width="600" height="900">
+                        <h2 class="mainListCardWrapTitle">
+                            Whiplash
+                        </h2>
+                        <div class="mainListCardWrapRating">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            84
+                        </div>
+                    </div>
+                </div>
+                <div class="mainListCard">
+                    <div class="mainListCardWrap">
+                        <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg" alt="image" width="600" height="900">
+                        <h2 class="mainListCardWrapTitle">
+                            Interstellar
+                        </h2>
+                        <div class="mainListCardWrapRating">
+                            <i class="fa fa-star" aria-hidden="true"></i>
+                            84
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function openMenu(){
+            document.querySelector('.sidebar').classList.add('active')
+        }
+        function closeMenu(){
+            document.querySelector('.sidebar').classList.remove('active')
+        }
+    </script>
+</body>
+</html>
